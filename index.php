@@ -34,23 +34,19 @@ $client = new Titulaire('SMAIL', 'Stephane', '1987-11-05', 'Paris');
 
 $creditAgricole = new Banque('Livret A', '567', '€', $client);
 $creditMutuelle = new Banque('Compte Courant', '1700', '€', $client);
-$societeEpargne = new Banque('Compte Epargne', '1 000 000', '€', $client);
+$societeEpargne = new Banque('Compte Epargne', '1000000', '€', $client);
 
 
-/* 
-	Je veux faire un virement de societeEpargne au CreditAgricole
+//Fonction de virement 
+//Virement du compte 'societeEpargne' sur le compte 'creditAgricole' d'un montant de 30 000 
+$societeEpargne->virement($creditAgricole, '30000');
 
-	$societeEpargne->virement($creditAgricole->setSolde())
-
-*/
-
-
-//--
 echo $creditAgricole->infoCompte();
 
-$creditAgricole->soldeCrediteur(67);
+// Test du fonction du prélèvement  
+$creditAgricole->soldeDebiteur(137);
 echo $creditAgricole->infoCompte();
-//--
+
 
 
 echo $creditMutuelle->infoCompte();

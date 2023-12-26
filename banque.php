@@ -60,8 +60,15 @@ SUR UN COMPTE BANCAIRE, on doit pouvoir :
 
         // Fonction de VIREMENT 
 
-        public function virement($send) {
+        public function virement($send, $money) {
+           
+            $this->_solde -= $money;
+            $send->solde($money);
             
+        }
+
+        public function solde($receive) {
+            $this->_solde += $receive;
         }
         
         

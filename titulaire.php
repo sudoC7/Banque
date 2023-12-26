@@ -45,7 +45,7 @@ UN TITULAIRE :
 
             return $result;
         }
-        
+         
 
         public function __toString() {
             return "M.".$this->_nom." ".$this->_prenom;
