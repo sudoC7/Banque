@@ -43,7 +43,7 @@ $societeEpargne->virement($creditAgricole, '30000');
 
 echo $creditAgricole->infoCompte();
 
-// Test du fonction du prélèvement  
+// Test du fonction de prélèvement  
 $creditAgricole->soldeDebiteur(137);
 echo $creditAgricole->infoCompte();
 

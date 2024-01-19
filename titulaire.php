@@ -27,14 +27,21 @@ UN TITULAIRE :
             $this->_comptesBancaire = [];
         }
 
-        //--------------------------------------------------------
+        //------------------FONCTIONS PERSONNALISÉES--------------
+        
 
-        //
+        public function __toString() {
+            return "M.".$this->_nom." ".$this->_prenom;
+        }
+        
+        // Fonction AJOUT DE COMPTE BANCAIRE
+
         public function addBanque(Banque $comptesBancaire) {
             $this->_comptesBancaire[] = $comptesBancaire;
         }
 
-        // Fonction affiche les infos du titulaire ainsi que les comptes bancaire
+        // Fonction AFFICHE INFO TITUALIRE
+        
         public function afficherInfoTitulaire() {
             $result = "<h2><u>Titulaire</u></h2> Nom et Prenom : $this<br> Age : 
             ".$this->_date_naissance->diff($to = new DateTime('today'))->y." ans <br> Comptes Bancaire :<br> ";
@@ -47,14 +54,10 @@ UN TITULAIRE :
         }
          
 
-        public function __toString() {
-            return "M.".$this->_nom." ".$this->_prenom;
-        }
         //--------------------------------------------------------
 
-
-
         //GET & SET
+
         public function getNom() {
             return $this->_nom;
         }

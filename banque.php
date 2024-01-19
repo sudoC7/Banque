@@ -6,12 +6,7 @@ COMPTE BANCAIRE :
 	une devise monétaire
 	un titulaire unique
 
-
-
     Afficher toutes les informations d'un compte bancaire, notamment le nom / prenom du titulaire du compte
-
-
-
 
 SUR UN COMPTE BANCAIRE, on doit pouvoir : 
 	créditer le compte de X euros
@@ -25,14 +20,18 @@ SUR UN COMPTE BANCAIRE, on doit pouvoir :
         private string $_libelle;
         private string $_solde;
         private string $_devise;
-        private Titulaire $_client; // Objet Titulaire
+        private Titulaire $_client; // Objet Titulaire //
+
+
+
+
         public function __construct($libelle, $solde, $devise, Titulaire $client) {
             
             $this->_libelle = $libelle; 
             $this->_solde = $solde; 
             $this->_devise = $devise;
             $this->_client = $client; // Objet Titulaire 
-            $this->_client->addBanque($this); // Objet Titulaire
+            $this->_client->addBanque($this); // Objet Titulaire $this --> représente l'objet Banque, cad a chaque fois que je vais crée un objet banque il va se rajouter dans la fonction 'addBanque()' avec '$this'
             
         }
         
@@ -113,7 +112,7 @@ SUR UN COMPTE BANCAIRE, on doit pouvoir :
             return $this;
         }
 
-
+        
 
         public function getClient() : Titulaire {
             
